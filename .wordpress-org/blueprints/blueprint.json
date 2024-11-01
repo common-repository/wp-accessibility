@@ -1,0 +1,41 @@
+{
+	"landingPage": "/wp-admin/admin.php?page=wp-accessibility",
+	"preferredVersions": {
+		"php": "7.4",
+		"wp": "latest"
+	},
+	"phpExtensionBundles": [
+		"kitchen-sink"
+	],
+	"steps": [
+		{
+			"step": "login",
+			"username": "admin",
+			"password": "password"
+		},
+		{
+			"step": "installPlugin",
+			"pluginZipFile": {
+				"resource": "wordpress.org\/plugins",
+				"slug": "wp-accessibility"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"wpa_show_playground_intro" : "true",
+				"wpa_underline" : "on",
+				"wpa_more": "on",
+				"wpa_focus": "on",
+				"wpa_focus_color": "313132",
+				"wpa_show_alt": "on"
+			}
+		}
+	],
+	"features": {
+		"networking": true
+	}
+}
